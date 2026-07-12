@@ -1,0 +1,92 @@
+{
+  "idea": {
+    "name": "TaxScheduler",
+    "fingerprint": "tax-preparer-appointment-document-tracker-saas",
+    "pitch": "Scheduling plus document submission tracker built exclusively for tax preparers.",
+    "cluster": "Scheduling and Document Submission Tracking",
+    "target_customer": "Solo and small-team tax preparers using Calendly or Goldmine who lose track of which clients have submitted documents",
+    "core_features": [
+      "Appointment booking page branded with preparer's name (Calendly-style but tax-specific)",
+      "Per-appointment document checklist auto-sent to client after booking",
+      "Document submission status board (Kanban: Not Submitted \u2192 Partial \u2192 Complete \u2192 In Review)",
+      "Automated SMS/email nudges when documents are overdue relative to appointment date",
+      "Season dashboard showing % of booked clients with complete document sets"
+    ],
+    "pricing_model": "Flat monthly SaaS",
+    "price_point": "$25/month per preparer; $199/year",
+    "gtm_channel": "r/taxpros and r/Accounting; tax preparer Facebook groups; Product Hunt launch in January (peak tax season awareness)",
+    "competitive_landscape": "Calendly (scheduling only, no document tracking), TaxDome (too complex and expensive for solo preparers), Goldmine (legacy CRM not tax-specific). No lightweight scheduling + document tracker combo exists for this niche.",
+    "unfair_advantage": "The document-submission-to-appointment linkage is the core insight \u2014 no generic scheduling tool connects 'has this client submitted their W-2s yet?' to their upcoming appointment, which is the actual workflow tax preparers need",
+    "mvp_estimate": "Next.js + Supabase + Cal.com API (scheduling) + Twilio + Resend; 2\u20133 weeks to MVP",
+    "agentic_automation": "Booking triggers an automated document checklist email to the client. A daily cron checks appointments within 7 days where document status is not 'Complete' and fires reminder SMS/emails. Status board updates are client-driven (upload link in email) or preparer-driven (one-click status change). Stripe handles billing. AI chat handles support. No content to maintain. Owner time: under 1 hour/week.",
+    "origin_story": "The same r/Accounting poster who was juggling three tools specifically named Goldmine as their scheduling and client paperwork tracking system \u2014 and called it 'frustrating and unreliable.' The core pain is that scheduling tools don't know anything about document status, so preparers have to manually cross-reference their calendar against a separate tracker to know which clients are ready to work on. During tax season this becomes a daily time sink. Goldmine is a legacy CRM from a different era; it was never designed for the document-collection workflow that defines tax prep.",
+    "automation_playbook": "Every new booking automatically triggers a personalized document checklist email listing exactly what the client needs to submit before their appointment. A cron job runs nightly and sends escalating reminders (friendly \u2192 urgent) to clients whose appointments are approaching with incomplete document sets. When a client uploads a document via their unique link, a webhook updates the status board and notifies the preparer via email. Stripe handles all billing and renewals. Support is handled by an AI widget. Estimated owner time: under 1 hour/week.",
+    "maintenance_hours_per_week": 1,
+    "keywords": [
+      "tax preparer scheduling software",
+      "client document tracker tax",
+      "tax appointment management"
+    ],
+    "supporting_urls": [
+      "https://www.reddit.com/r/Accounting/comments/1u8u89k/looking_for_accounting_program_recommendations/"
+    ],
+    "weighted_total": 91,
+    "checklist": {
+      "ten_plus_posts_same_pain": true,
+      "paying_for_inferior_solution": true,
+      "reachable_channel": true,
+      "mvp_under_4_weeks": true,
+      "price_point_high_enough": true,
+      "hair_on_fire": true,
+      "can_presell": true,
+      "fewer_than_3_competitors": true,
+      "low_maintenance_ops": true
+    },
+    "checklist_passed": 9,
+    "momentum": "unknown",
+    "rising_queries": [],
+    "gate_result": "passed"
+  },
+  "pain_points": [
+    {
+      "problem": "Existing accounting software doesn't meet expectations, is being discontinued, or is overly complicated and expensive for the features offered.",
+      "persona": "Tax and bookkeeping business owner",
+      "current_workaround": "Using multiple tools: QuickBooks Online for bookkeeping, DocuSign for e-signatures, Goldmine for scheduling and client paperwork tracking",
+      "frequency": "daily",
+      "wtp_signal": "Currently paying for QuickBooks Online, DocuSign, and Goldmine subscriptions",
+      "url": "https://www.reddit.com/r/Accounting/comments/1u8u89k/looking_for_accounting_program_recommendations/",
+      "engagement": 0,
+      "source": "reddit"
+    },
+    {
+      "problem": "Practice management tools are restrictive and don't accommodate tracking of detailed client data points needed for tax preparation.",
+      "persona": "Tax accounting practice owner",
+      "current_workaround": "Using TaxDome plus spreadsheets to manually compile data; building custom solution internally",
+      "frequency": "daily",
+      "wtp_signal": "Spending ~$500 annually on software; investing time to build custom solution",
+      "url": "https://www.reddit.com/r/Accounting/comments/1udzgd3/anyone_else_feel_like_their_practice_management/",
+      "engagement": 0,
+      "source": "reddit"
+    },
+    {
+      "problem": "E-signature solution (DocuSign) has reliability issues with clients being unable to complete signatures.",
+      "persona": "Tax and bookkeeping business owner",
+      "current_workaround": "Currently using DocuSign despite frequent client sign-up failures",
+      "frequency": "weekly",
+      "wtp_signal": "Paying for DocuSign subscription",
+      "url": "https://www.reddit.com/r/Accounting/comments/1u8u89k/looking_for_accounting_program_recommendations/",
+      "engagement": 0,
+      "source": "reddit"
+    },
+    {
+      "problem": "Meeting scheduling and client paperwork tracking system is frustrating and unreliable.",
+      "persona": "Tax and bookkeeping business owner",
+      "current_workaround": "Using Goldmine for both scheduling and client document submission tracking",
+      "frequency": "daily",
+      "wtp_signal": "Paying for Goldmine subscription",
+      "url": "https://www.reddit.com/r/Accounting/comments/1u8u89k/looking_for_accounting_program_recommendations/",
+      "engagement": 0,
+      "source": "reddit"
+    }
+  ]
+}
